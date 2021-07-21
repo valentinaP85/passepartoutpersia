@@ -1,0 +1,75 @@
+:root{
+    --accent: #ee1c25;
+    --chiaro: #f7f7f7;
+}
+body {
+   background-color: var(--chiaro); 
+}
+h1{
+    color: var(--accent);
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-md-brand{
+    font-size: 0.99rem;
+}
+
+.txt-chiaro{
+    color: var(--chiaro) !important;
+}
+.txt-accent{
+    color: var(--accent) !important;
+}
+.navbar-dark {
+    background-color: #212529 !important;
+}
+.container-max{
+    max-width: 1140px !important;
+  }
+.div-cubo{
+    height: 40px;
+    width: 40px;
+    color: var(--chiaro) !important;
+    border: 1px solid var(--accent);
+    background-color: transparent !important;
+}
+.shadow-dark{
+    box-shadow: 4px 4px 5px black;
+  }
+  .shadow-h-none:hover{
+    transition: 0.3s;
+    box-shadow:none;
+    // background-color: rgba(238, 28, 37, 0.15);
+  }
+.header{
+    background-image:  url(/media/headerDesk.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+    height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 1;
+}
+
+.btn-ppp{
+    border: 3px solid var(--accent);
+    min-width: 170px;
+    max-width: 400px;
+    padding: 10px;
+    color: var(--chiaro);
+    background-color: transparent;
+   
+}
+.btn-pppSearch{
+    border: 1px solid var(--accent);
+    padding: 4px;
+    color: var(--chiaro);
+    background-color: transparent;
+}
+@media ( min-width: 576px) {
+.navbar-md-brand{
+    font-size: 1.25rem;
+}
+}
