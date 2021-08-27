@@ -1,6 +1,8 @@
-<div class="col-12">
+<div class="col-12 pt-3">
 <p>
-Sull'acquisto delle cornici dopo il noleggio 6% di sconto
+<strong>
+    <em>Sull'acquisto delle cornici dopo il noleggio 6% di sconto</em>
+</strong>
 </p>
 <p>
 <h3>PRENOTAZIONE E CONFERMA </h3>

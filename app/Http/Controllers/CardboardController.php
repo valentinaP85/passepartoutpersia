@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cardboard;
 use Illuminate\Http\Request;
+use App\Http\Requests\CardboardRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CardboardController extends Controller
 {
@@ -24,7 +26,7 @@ class CardboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('cardboards.create');
     }
 
     /**
@@ -33,9 +35,41 @@ class CardboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CardboardRequest $request)
     {
-        //
+        $img = $request->file('img');
+        
+        if($img == null){
+            $cardboard= Cardboard::create([
+                'nome'=> $request->input('nome'),
+                'caratteristiche'=> $request->input('caratteristiche'),
+                'spessore'=> $request->input('spessore'),
+                'misuraFoglio'=> $request->input('misuraFoglio'),
+                'colori' => $request->input('colori'),
+                'superficie'=> $request->input('superficie'),
+                'status' => $request->input('status')
+            ]);                
+        }else{     
+            $cardboard= Cardboard::create([
+                'nome'=> $request->input('nome'),
+                'caratteristiche'=> $request->input('caratteristiche'),
+                'spessore'=> $request->input('spessore'),
+                'misuraFoglio'=> $request->input('misuraFoglio'),
+                'colori' => $request->input('colori'),
+                'superficie'=> $request->input('superficie'),
+                'status' => $request->input('status')
+            ]);
+            $cardboard->img = $request->file('img')->store("public/cardboard/$cardboard->id"); 
+            $cardboard->save();
+        }
+        return redirect(route('users.revisorDashboard'))->with('message', "Il nuovo passepartout è stato inserito correttamente."); 
+    }
+
+    public function status(Cardboard $cardboard){
+        $cardboard->status  = !$cardboard->status;
+        $cardboard->save();
+        return redirect()->back();   
+        
     }
 
     /**
@@ -57,7 +91,7 @@ class CardboardController extends Controller
      */
     public function edit(Cardboard $cardboard)
     {
-        //
+        return view('cardboards.edit', compact('cardboard'));
     }
 
     /**
@@ -67,9 +101,20 @@ class CardboardController extends Controller
      * @param  \App\Models\Cardboard  $cardboard
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cardboard $cardboard)
+    public function update(CardboardRequest $request, Cardboard $cardboard)
     {
-        //
+        $cardboard->update($request->all());
+        
+        $img = $request->file('img');
+        
+        
+        if($img !=null){
+            Storage::delete($cardboard->img);
+            $cardboard->img = $request->file('img')->store("public/cardboard/$cardboard->id"); 
+            $cardboard->save();                    
+        }
+        
+        return redirect(route('passepartout'))->with('message', "Il passepartout $cardboard->nome è stato modificato correttamente.");
     }
 
     /**
@@ -80,6 +125,11 @@ class CardboardController extends Controller
      */
     public function destroy(Cardboard $cardboard)
     {
-        //
+        if($cardboard->img !=null){
+            Storage::deleteDirectory("public/cardboard/$cardboard->id");  
+        }
+        
+        $cardboard->delete();
+        return redirect()->back()->with('message', "Il passepartout $cardboard->nome è stato cancellato con successo.");
     }
 }

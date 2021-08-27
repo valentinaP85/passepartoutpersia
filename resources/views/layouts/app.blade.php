@@ -22,12 +22,16 @@
 <body>
     <div id="app">
        <x-navbar />
-
+       
         <main class="py-5">
+          
             @yield('content')
         </main>
         <x-footer />
+       
+    
     </div>
+@stack('script')
     <script src="https://kit.fontawesome.com/5c199c0cb2.js" rel="noopener" crossorigin="anonymous"></script>
 </body>
 </html>

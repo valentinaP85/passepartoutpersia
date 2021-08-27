@@ -4,6 +4,7 @@
 }
 body {
    background-color: var(--chiaro); 
+   font-size: 12px; 
 }
 h1{
     color: var(--accent);
@@ -14,7 +15,9 @@ h1{
 .navbar-md-brand{
     font-size: 0.99rem;
 }
-
+.bg-avorio{
+    background-color: rgb(238, 250, 196);
+}
 .txt-chiaro{
     color: var(--chiaro) !important;
 }
@@ -34,8 +37,18 @@ h1{
     border: 1px solid var(--accent);
     background-color: transparent !important;
 }
+.div-rett{
+    max-height: 60px;
+    max-width: 90px;
+    border: 2px solid black;
+    background-color: transparent !important;
+    padding: auto;
+}
 .shadow-dark{
     box-shadow: 4px 4px 5px black;
+  }
+  .shadow-gray{
+    box-shadow: 4px 4px 5px rgba(120, 120, 120, 0.462);
   }
   .shadow-h-none:hover{
     transition: 0.3s;
@@ -68,8 +81,21 @@ background-size: cover;
     color: var(--chiaro);
     background-color: transparent;
 }
+
+
 @media ( min-width: 576px) {
 .navbar-md-brand{
     font-size: 1.25rem;
 }
+body {
+ font-size: 14px; 
+ }
 }
+@media ( min-width: 992px) {
+    .card-h-fixed{
+        height: 655px;
+    }
+
+    }
+    
+    

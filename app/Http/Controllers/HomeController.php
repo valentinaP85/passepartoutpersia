@@ -25,4 +25,42 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function json()
+    {
+        return view('cap-json');
+    }
+
+    public function revisorDashboard()
+    {
+        return view('users.revisorDashboard');
+    }
+    public function adminDashboard()
+    {
+        return view('users.adminDashboard');
+    }
+
+    public function statusAdmin(User $user){
+       
+        $user->is_admin  = !$user->is_admin;
+        $user->save();
+        return redirect()->back(); 
+    }
+     
+    public function statusRevisor(User $user){
+        $user->is_revisor  = !$user->is_revisor;
+        $user->save();
+        return redirect()->back();   
+        
+    }
+    public function condizioni()
+    {
+        return view('condizioni-di-vendita');
+    }
+    public function back()
+    {
+        return redirect()->back();  
+    }
+
+
+
 }

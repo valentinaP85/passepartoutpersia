@@ -24,9 +24,23 @@
                     <a class="nav-link" href="{{ route('noleggio') }}">Noleggio</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
                 </li>
-                
+                @auth
+
+                @if(Auth::user()->is_revisor)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('users.revisorDashboard') }}">Revisore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('richieste.noleggi') }}"><i class="far fa-bell"></i></a>
+                </li>
+                @endif
+                @endauth
+
                 @guest
                  
                 @if (Route::has('login'))
@@ -42,7 +56,7 @@
                 @endif
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
                     
