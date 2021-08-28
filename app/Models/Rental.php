@@ -22,13 +22,7 @@ class Rental extends Model
     public function size () {
         return $this->belongsTo(Size::class);
     }
-    // public function giveMeName ($id) {
-    //    $rentalModel = RentalModel::All()->where('id', $id)->first();
-    //    return $rentalModel->name;
-    // }
     public function bookingRental () {
         return $this->hasOne(BookingRental::class);
-    }
-   
-    
+    }    
 }

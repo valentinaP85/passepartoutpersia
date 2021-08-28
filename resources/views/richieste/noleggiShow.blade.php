@@ -5,15 +5,9 @@
     <div class="row justify-content-center px-0 pt-5 m-0">
         
         <div class="col-12 text-center">
-            <h1>noleggio n. 
-                @if ($bookingRental->id > '99') 
-                {{date('y') . $bookingRental->id}}
-             @elseif($bookingRental->id > '9')
-               {{date('y') . '0' . $bookingRental->id}}
-             @else
-                {{date('y') . '00' .  $bookingRental->id}}
-
-             @endif</h1>
+            <h1>COD. 
+              {{$bookingRental->formatRentalCode()}}
+            </h1>
         </div>
     </div>
     <div class="row justify-content-around px-0 pt-5 m-0">
@@ -27,21 +21,8 @@
 
             <p ><strong>COD.</strong> 
                 <span id='Cod. 
-                @if ($bookingRental->id > '99') 
-                {{date('y') . $bookingRental->id}}
-             @elseif($bookingRental->id > '9')
-               {{date('y') . '0' . $bookingRental->id}}
-             @else
-                {{date('y') . '00' .  $bookingRental->id}}
-                @endif  '> 
-            @if ($bookingRental->id > '99') 
-                {{date('y') . $bookingRental->id}}
-             @elseif($bookingRental->id > '9')
-               {{date('y') . '0' . $bookingRental->id}}
-             @else
-                {{date('y') . '00' .  $bookingRental->id}}
-
-             @endif   
+                {{$bookingRental->formatRentalCode()}} '> 
+                {{$bookingRental->formatRentalCode()}}
              </span> - <strong>Modello</strong>:
               
                {{$bookingRental->rental->rentalModel->name}}

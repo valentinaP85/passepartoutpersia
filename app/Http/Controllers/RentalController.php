@@ -71,29 +71,36 @@ class RentalController extends Controller
         
             if($request->input('dal')<$request->input('al') && $request->input('dal')>=$final){
                 $bookingRental= BookingRental::create([
-                
-                
-                'rental_id'=> $request->input('rental_id'),
-                'dal' => $request->input('dal'),
-                'al'=> $request->input('al'),
-                'qta'=> $request->input('qta'),
                 'nameSurname' => $request->input('nameSurname'),
                 'cap' => $request->input('cap'),
                 'email'=> $request->input('email'),
                 'telefono'=> $request->input('telefono'),
+                'trasporto' => $request->input('trasporto'),
+                'message' => $request->input('message'),
+                'dal' => $request->input('dal'),
+                'al'=> $request->input('al'),
+
+                'qta'=> $request->input('qta'),
+                'rental_id'=> $request->input('rental_id'),
                 'montaggio'=> $request->input('montaggio'),
                 'smontaggio' => $request->input('smontaggio'),
                 'passepartout' => $request->input('passepartout'),
                 'colorPass'=> $request->input('colorPass'),
                 'fondo' => $request->input('fondo'),
-                'trasporto' => $request->input('trasporto'),
                 'vert' => $request->input('vert'),
                 'orizz' => $request->input('orizz'),
-                'message' => $request->input('message'),
+                
             ]);
+
+            // $nameSurname =$request->input('nameSurname');
+            // $cap = $request->input('cap');
+            // foreach ($request->all() as $key => $value) {
+            //     if()
+            // }
+
             $bookingRental->save();
         
-        return redirect(route('noleggio'))->with('message', "la tua richiesta è stata inoltrata.");  
+        // return redirect(route('noleggio'))->with('message', "la tua richiesta è stata inoltrata.");  
             }
             else{
                 return redirect()->back()->with('message', "controlla le date inserite e ricorda che è possibile prenotare solo con almeno un mese di anticipo!");  

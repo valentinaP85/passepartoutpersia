@@ -10,6 +10,7 @@ use App\Models\Glass;
 use App\Models\Photo;
 use App\Models\Rental;
 use App\Models\Cardboard;
+use App\Models\OtherRental;
 use App\Models\RentalModel;
 use App\Models\BookingRental;
 use App\Models\CardboardForRental;
@@ -39,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if(Schema::hasTable('frames') && Schema::hasTable('users') && Schema::hasTable('cardboards') && Schema::hasTable('colors') && Schema::hasTable('sizes') && Schema::hasTable('cardboard_for_rentals') && Schema::hasTable('photos') && Schema::hasTable('glasses') && Schema::hasTable('rentals') && Schema::hasTable('rental_models') && Schema::hasTable('booking_rentals') ){
+        if(Schema::hasTable('frames') && Schema::hasTable('users') && Schema::hasTable('cardboards') && Schema::hasTable('colors') && Schema::hasTable('sizes') && Schema::hasTable('cardboard_for_rentals') && Schema::hasTable('photos') && Schema::hasTable('glasses') && Schema::hasTable('rentals') && Schema::hasTable('rental_models') && Schema::hasTable('booking_rentals') && Schema::hasTable('other_rentals') ){
             $users = User::all();
             $users = User::orderBy('name', 'asc')->get();
             // $notices = Notice::all();
@@ -66,9 +67,11 @@ class AppServiceProvider extends ServiceProvider
             $rentals = Rental::orderBy('size_id', 'asc')->get();
             $booking_rentals = BookingRental::all();
             $booking_rentals = BookingRental::orderBy('created_at', 'desc')->get();
+            $other_rentals = OtherRental::all();
+            $other_rentals = OtherRental::orderBy('created_at', 'desc')->get();
             
             
-            View::share(compact('frames','users','cardboards','photos','sizes','colors','glasses', 'cardboard_for_rentals', 'rentals', 'rental_models', 'booking_rentals'));
+            View::share(compact('frames','users','cardboards','photos','sizes','colors','glasses', 'cardboard_for_rentals', 'rentals', 'rental_models', 'booking_rentals', 'other_rentals'));
         }
         
     }

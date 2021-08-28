@@ -81,7 +81,9 @@ background-size: cover;
     color: var(--chiaro);
     background-color: transparent;
 }
-
+.ms-negative{
+    margin-left: -0.5rem;
+}
 
 @media ( min-width: 576px) {
 .navbar-md-brand{

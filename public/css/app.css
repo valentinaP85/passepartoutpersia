@@ -10929,6 +10929,10 @@ h1, .h1 {
   background-color: transparent;
 }
 
+.ms-negative {
+  margin-left: -0.5rem;
+}
+
 @media (min-width: 576px) {
   .navbar-md-brand {
     font-size: 1.25rem;

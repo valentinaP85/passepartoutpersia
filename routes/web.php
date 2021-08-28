@@ -9,6 +9,7 @@ use App\Http\Middleware\RevisorMiddleware;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CardboardController;
+use App\Http\Controllers\OtherRentalController;
 use App\Http\Controllers\RentalModelController;
 use App\Http\Controllers\CardboardForRentalController;
 
@@ -100,6 +101,8 @@ Route::get('/cornici', [FrameController::class, 'index'])->name('cornici');
 Route::get('/passepartout', [CardboardController::class, 'index'])->name('passepartout');
 Route::get('/noleggio', [RentalController::class, 'index'])->name('noleggio');
 Route::get('/prenotazione-noleggio', [RentalController::class, 'viewBooking'])->name('prenotazione-noleggio');
+Route::post('/otherRentals/store', [OtherRentalController::class, 'store'])->name('otherRentals.store');
+Route::delete('/otherRentals/{otherRental}/delete', [OtherRentalController::class, 'destroy'])->name('otherRentals.destroy');
 Route::post('/prenotazione-inviata', [RentalController::class, 'bookingRental'])->name('prenotazione-inviata');
 
 Route::get('/azienda', [CompanyController::class, 'index'])->name('azienda');

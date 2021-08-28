@@ -19,17 +19,18 @@ class BookingRental extends Model
     public function rental () {
         return $this->belongsTo(Rental::class);
     }
-    public function rentalCode () {
-        // $bookingRental= BookingRental::first();
- 
-        // if ($bookingRental->id > '99') {
-        //    return date('y') . $bookingRental->id;
-        // }elseif($bookingRental->id > '9'){
-        //   return date('y') . '0' . $bookingRental->id;
-        // }else{
-        //    return date('y') . '00' .  $bookingRental->id;
-        // }
-        
+    public function OtherRentals () {
+        return $this->hasMany(OtherRental::class);
+    }
+
+    public function formatRentalCode () { 
+        if($this->id > '99'){
+            return date('y') . $this->id;
+        } else if ($this->id > '9'){
+            return date('y') . '0' . $this->id;
+        } else {
+            return date('y') . '00' . $this->id;
+        }   
     }
     
        
