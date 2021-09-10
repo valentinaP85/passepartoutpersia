@@ -37,9 +37,19 @@
                 
             </p>
         </div>
-        <div class="col-12 col-md-5 text-center"><img class="img-fluid" src="/media/cornice in ferro Passepartout Persia.png" alt="fotografia di Sofia Loren incorniciata con passepartout bianco e cornice in ferro"><br>
+        <div class="col-12 col-md-5 text-center"><img class="img-fluid" src="" alt="fotografia di Sofia Loren incorniciata con passepartout bianco e cornice in ferro"><br>
         </div>
     </div>
 </div>
 </div>
+
+<script>
+    let arr =[1,32,5,2,8,22,2,4]
+    let fun =9
+ console.log(arr.map(a => a>= fun )? true : false) ;
+
+
+
+
+</script>
 @endsection

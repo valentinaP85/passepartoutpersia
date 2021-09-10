@@ -82,16 +82,20 @@
                                         di cui  verticali: {{$bookingRental->vert}}, orizzontali: {{$bookingRental->orizz}}
                                     </p>
                                     <p class="pb-0 mb-0"> dal  {{$bookingRental->dal}} al  {{$bookingRental->al}} -
-                                        {{-- {{dd(gettype($bookingRental->vert))}} --}}
+                                        
                                         totale giorni: 
                                         <span class="d-none">
                                             {{ $start = strtotime($bookingRental->dal)}}
                                             
                                             {{$end = strtotime($bookingRental->al)}}
                                         </span>
-                                        {{-- {{dd($bookingRental->trasporto)}} --}}
-                                        @if($bookingRental->trasporto == 'passepartoutPersia')
-                                        {{$days_between = ceil(abs(($end - $start)-(604800))/ 86400)}} <br>(tolti i 7 giorni per il trasporto)
+                                        @if ( 30 > $days_between = ceil(abs($end - $start) / 86400) )   
+                                        {{$days_between =30}}<small> <em>(noleggio minimo)</em> </small>
+
+
+                                        @elseif($bookingRental->trasporto == 'passepartoutPersia'  && ( $days_between = ceil(abs($end - $start) / 86400)) >34)
+                                     
+                                        {{$days_between = ceil(abs(($end - $start)-(432000))/ 86400)}} <br>(tolti i 5 giorni per il trasporto)
                                         @else 
                                         {{$days_between = ceil(abs($end - $start) / 86400)}}
                                         @endif
