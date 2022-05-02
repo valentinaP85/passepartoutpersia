@@ -21,7 +21,7 @@ class ContactController extends Controller
 
         $content=compact('name', 'email', 'message');
         
-        Mail::to('passepartoutpersia@gmail.com')->send(New ContactMail($content));
+        Mail::to('passepartoutpersia.c@gmail.com')->send(New ContactMail($content));
 
         return redirect( route('contact.thankyou'));
     }

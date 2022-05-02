@@ -22,7 +22,7 @@ class Rental extends Model
     public function size () {
         return $this->belongsTo(Size::class);
     }
-    public function bookingRental () {
-        return $this->hasOne(BookingRental::class);
+    public function bookingRentalDetail () {
+        return $this->hasOne(BookingRentalDetails::class);
     }    
 }

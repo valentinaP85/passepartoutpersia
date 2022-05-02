@@ -61,8 +61,8 @@
         </div>
       
         <div class="row justify-content-center px-2 m-0">
-
-            {{-- <x-quantitaCorniciNoleggio
+{{-- 
+            <x-quantitaCorniciNoleggio
            size= "{{$size['id']}}"
              
             /> --}}

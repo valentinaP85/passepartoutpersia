@@ -42,7 +42,7 @@
           <div class="modal-body text-center">
             <div class="row m-0 justify-content-center align-items-center h-100">
               @if($imgProfilo ==null && $img ==null)
-              <h2 class="txt_accent"> PassePartoutPersia</h2>
+              <h2 class="txt_accent"> PassePartoutPersia e C</h2>
               @else
               @if ($imgProfilo !=null)
               <div class="col-12 col-md-6">

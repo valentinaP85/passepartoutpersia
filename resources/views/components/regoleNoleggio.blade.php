@@ -47,14 +47,13 @@ La causale sarà: cauzione (stesso Codice Ordine) con nome e cognome del richied
 </p>
 <p>
 I pagamenti devono essere effettuato tramite bonifico bancario intestato a:
-Passepartout Persia di Persia Valentina
-IBAN IT62 U087 8739 0100 0000 0051 717
+Passepartout Persia e C di Laura Bucci
+IBAN IT62 T087 8739 0100 0000 0052 130
 </p>
 <p>
 <h3>CONDIZIONI </h3>
 Noleggio minimo:<br>
-20 cornici per un mese o 10 cornice per 3 mesi (con vetro normale e stessa misura e profilo)<br>
-30 cornici per un mese o 15 cornici per 3 mesi (con vetro protezione UV e stessa misura e profilo)<br>
+20 cornici per un mese.<br>
 per il noleggio di cornici di differenti profili e misure le quantità minime saranno comunicate al momento del preventivo.
 </p>
 
@@ -62,7 +61,7 @@ per il noleggio di cornici di differenti profili e misure le quantità minime sa
 <p>
     <h3>  SERVIZI AGGIUNTIVI:</h3>
   
--Montaggio ( € 16,00 cadauna): ci occupiamo se richiesto, della misurazione delle opere, dell'assemblaggio con nastro adesivo adatto alla conservazione, del passepartout e relativo fondo, del montaggio dell'opera nel passepartout con angoli in poliestere, ed in fine del montaggio dell'opera (così assemblata) nella cornice.
+-Montaggio ( € 10,00 cadauna): ci occupiamo se richiesto, della misurazione delle opere, dell'assemblaggio con nastro adesivo adatto alla conservazione, del passepartout e relativo fondo, del montaggio dell'opera nel passepartout con angoli in poliestere, ed in fine del montaggio dell'opera (così assemblata) nella cornice.
 -Smontaggio (€ 4,00): smontaggio del passepartout dalla cornice.
     </p>
 </div>

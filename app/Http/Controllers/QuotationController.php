@@ -35,7 +35,22 @@ class QuotationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $quotation= Quotation::create([
+                
+            'bookingRental_id' => $request->input('bookingRental_id'),
+            'prezzoTrasporti' => $request->input('prezzoTrasporti'),
+            'approvato' => $request->input('approvato'),
+            'totale'=> $request->input('totale'),
+            'informazioni'=> $request->input('informazioni'),
+            'nomeSocieta'=> $request->input('nomeSocieta'),
+            'viaCivico' => $request->input('viaCivico'),
+            'codiceUnivoco'=> $request->input('codiceUnivoco'),
+            'pec' => $request->input('pec'),
+        ]);
+        $quotation->save();
+    
+    return redirect(route('users.revisorDashboard'))->with('message', "La nuova cornice a noleggio è stata inserita correttamente."); 
+
     }
 
     /**

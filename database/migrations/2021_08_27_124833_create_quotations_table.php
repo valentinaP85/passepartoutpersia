@@ -18,10 +18,11 @@ class CreateQuotationsTable extends Migration
             $table->unsignedBigInteger('bookingRental_id');
             $table->foreign('bookingRental_id')->references('id')->on('booking_rentals')->onDelete('cascade');
             $table->float('prezzoTrasporti')->nullable();
+            $table->string('informazioni')->nullable();
             $table->boolean('approvato')->nullable()->default(Null);
             $table->float('totale');
-            $table->string('nomeSocietà')->nullable();
-            $table->string('viaCivico');           
+            $table->string('nomeSocieta')->nullable();
+            $table->string('viaCivico')->nullable();           
             $table->string('codiceUnivoco')->nullable();
             $table->string('pec')->nullable();
             $table->timestamps();

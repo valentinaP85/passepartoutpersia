@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOtherRentalsTable extends Migration
+class CreateBookingRentalDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateOtherRentalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('other_rentals', function (Blueprint $table) {
+        Schema::create('booking_rental_details', function (Blueprint $table) {
             $table->id();
-            
             $table->boolean('passepartout')->nullable();
             $table->string('colorPass')->nullable();
             $table->boolean('fondo')->nullable();
@@ -25,12 +24,8 @@ class CreateOtherRentalsTable extends Migration
             $table->integer('vert');
             $table->integer('orizz');
             $table->unsignedBigInteger('rental_id');
-            $table->foreign('rental_id')->references('id')->on('rentals');
-            $table->unsignedBigInteger('bookingRental_id');
-            $table->foreign('bookingRental_id')->references('id')->on('booking_rentals');
-                       
-            
-            
+            $table->foreign('rental_id')->references('id')->on('rentals')->onDelete('cascade');
+            $table->integer('bookingRental_id');
             $table->timestamps();
         });
     }

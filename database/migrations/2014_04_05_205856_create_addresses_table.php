@@ -1,10 +1,10 @@
 <?php
-use App\Models\Color;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateColorsTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreateColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('colors', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->boolean('is_default')->default(false);
+            $table->string('state')->nullable();
+            $table->string('prov')->nullable();
+            $table->string('cap')->nullable();
+            $table->string('street')->nullable();
             $table->timestamps();
         });
-        
-        $colors= ['naturale', 'bianco', 'nero', 'avorio'];
-
-        foreach ($colors as $color) {
-            $c = new Color();
-            $c -> name = $color;
-            $c -> save();
-        }
     }
 
     /**
@@ -35,6 +31,6 @@ class CreateColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colors');
+        Schema::dropIfExists('addresses');
     }
 }

@@ -32,7 +32,7 @@ Per fatture superiori ai €77,47 l'imposta di bollo è di €2,00. L'ordine min
 La corretta ricezione dell'ordine è confermata mediante una risposta inviata all'indirizzo di posta elettronica comunicato dal Cliente. Il messaggio contiene tutti i dati inseriti dal Cliente, il quale si impegna a verificarne la correttezza e a comunicare tempestivamente eventuali correzioni.
 La lavorazione di quanto ordinato inizia solo all'atto dell'effettivo accredito sul c/c, che deve avvenire entro 5 giorni lavorativi dalla data di accettazione dell'ordine, decorsi i quali l'ordine viene ritenuto automaticamente annullato.
 La causale del bonifico bancario deve riportare il numero della fattura ed il nome e cognome del Cliente. Il pagamento deve essere effettuato tramite bonifico bancario intestato a:<br>
-Passepartout Persia di Persia Valentina IBAN IT62 U087 8739 0100 0000 0051 717   
+Passepartout Persia e C di Laura Bucci IBAN IT62 T087 8739 0100 0000 0052 130   
 </p>
 <h2>Diritto di recesso</h2>
 <p>
@@ -40,7 +40,7 @@ Passepartout Persia di Persia Valentina IBAN IT62 U087 8739 0100 0000 0051 717
 </p>
 <h2>Reclami</h2>
 <p>
-   Ogni eventuale reclamo dovrà essere rivolto a Passepartout Persia di Valentina Persia, via San Pietro,89 01100 Viterbo (VT), utilizzando il modulo (qui allegato), il quale dovrà essere inviato tramite raccomandata con avviso di ricevimento entro 5 giorni dalla data di ricevimento della merce.
+   Ogni eventuale reclamo dovrà essere rivolto a Passepartout Persia e C di Laura Bucci, via Marcello Guidi ,15 00060 Castelnuovo di Porto (RM)), utilizzando il modulo (qui allegato), il quale dovrà essere inviato tramite raccomandata con avviso di ricevimento entro 5 giorni dalla data di ricevimento della merce.
 </p>
 <h2>Privacy</h2>
 <p>

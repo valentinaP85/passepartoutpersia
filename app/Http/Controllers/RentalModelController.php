@@ -93,6 +93,8 @@ class RentalModelController extends Controller
         return redirect(route('users.revisorDashboard'))->with('message', "Hai modificato il modello a noleggio");
     }
 
+  
+
     /**
      * Remove the specified resource from storage.
      *

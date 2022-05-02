@@ -36,7 +36,7 @@
                     <a class="nav-link" href="{{ route('users.revisorDashboard') }}">Revisore</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('richieste.noleggi') }}"><i class="far fa-bell"></i></a>
+                    <a class="nav-link" href="{{ route('richieste.richiesteP') }}"><i class="far fa-bell"></i></a>
                 </li>
                 @endif
                 @endauth

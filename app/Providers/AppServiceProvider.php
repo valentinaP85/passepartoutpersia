@@ -8,12 +8,15 @@ use App\Models\Color;
 use App\Models\Frame;
 use App\Models\Glass;
 use App\Models\Photo;
+use App\Models\Quote;
 use App\Models\Rental;
 use App\Models\Cardboard;
-use App\Models\OtherRental;
+use App\Models\FrameDetail;
 use App\Models\RentalModel;
 use App\Models\BookingRental;
+use App\Models\CardboardDetail;
 use App\Models\CardboardForRental;
+use App\Models\BookingRentalDetail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -40,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if(Schema::hasTable('frames') && Schema::hasTable('users') && Schema::hasTable('cardboards') && Schema::hasTable('colors') && Schema::hasTable('sizes') && Schema::hasTable('cardboard_for_rentals') && Schema::hasTable('photos') && Schema::hasTable('glasses') && Schema::hasTable('rentals') && Schema::hasTable('rental_models') && Schema::hasTable('booking_rentals') && Schema::hasTable('other_rentals') ){
+        if(Schema::hasTable('frames') && Schema::hasTable('users') && Schema::hasTable('cardboards') && Schema::hasTable('colors') && Schema::hasTable('sizes') && Schema::hasTable('cardboard_for_rentals') && Schema::hasTable('photos') && Schema::hasTable('glasses') && Schema::hasTable('rentals') && Schema::hasTable('rental_models') && Schema::hasTable('booking_rentals') && Schema::hasTable('booking_rental_details') && Schema::hasTable('quotes') && Schema::hasTable('cardboard_details')&& Schema::hasTable('frame_details')){
             $users = User::all();
             $users = User::orderBy('name', 'asc')->get();
             // $notices = Notice::all();
@@ -64,14 +67,18 @@ class AppServiceProvider extends ServiceProvider
             $rental_models = RentalModel::all();
             $rental_models = RentalModel::orderBy('name', 'asc')->get();
             $rentals = Rental::all();
-            $rentals = Rental::orderBy('size_id', 'asc')->get();
+            $rentals = Rental::orderBy('size_id', 'desc')->get();
             $booking_rentals = BookingRental::all();
             $booking_rentals = BookingRental::orderBy('created_at', 'desc')->get();
-            $other_rentals = OtherRental::all();
-            $other_rentals = OtherRental::orderBy('created_at', 'desc')->get();
-            
-            
-            View::share(compact('frames','users','cardboards','photos','sizes','colors','glasses', 'cardboard_for_rentals', 'rentals', 'rental_models', 'booking_rentals', 'other_rentals'));
+            $booking_rental_details = BookingRentalDetail::all();
+            $booking_rental_details = BookingRentalDetail::orderBy('created_at', 'desc')->get();
+            $quotes = Quote::all();
+            $quotes = Quote::orderBy('created_at', 'desc')->get();
+            $cardboardDetails = CardboardDetail::all();
+            $cardboardDetails = CardboardDetail::orderBy('created_at', 'desc')->get();
+            $frameDetails = FrameDetail::all();
+            $frameDetails = FrameDetail::orderBy('created_at', 'desc')->get();
+            View::share(compact('frames','users','cardboards','photos','sizes','colors','glasses', 'cardboard_for_rentals', 'rentals', 'rental_models', 'booking_rentals', 'booking_rental_details','quotes','cardboardDetails','frameDetails'));
         }
         
     }

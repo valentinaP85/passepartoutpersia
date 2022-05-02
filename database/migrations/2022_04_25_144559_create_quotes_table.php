@@ -1,9 +1,10 @@
 <?php
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
-class CreateBookingRentalsTable extends Migration
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateQuotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +13,7 @@ class CreateBookingRentalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('booking_rentals', function (Blueprint $table) {
+        Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('surname');
@@ -20,9 +21,6 @@ class CreateBookingRentalsTable extends Migration
             $table->string('cap');
             $table->string('email');
             $table->string('telefono')->nullable();
-            $table->string('trasporto');
-            $table->date('dal');
-            $table->date('al');
             $table->text('message')->nullable(); 
             $table->timestamps();
         });
@@ -35,6 +33,6 @@ class CreateBookingRentalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking_rentals');
+        Schema::dropIfExists('quotes');
     }
 }

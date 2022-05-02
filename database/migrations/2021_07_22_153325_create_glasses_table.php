@@ -19,7 +19,7 @@ class CreateGlassesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        $glasses= ['vetro normale', 'vetro anti-UV e anti-riflesso'];
+        $glasses= ['vetro normale', 'vetro anti-UV e anti-riflesso', 'senza vetro'];
 
         foreach ($glasses as $glass) {
             $c = new Glass();

@@ -4,8 +4,6 @@ namespace App\Models;
 
 use App\Models\Rental;
 use App\Models\RentalModel;
-
-use App\Models\BookingRental;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,14 +11,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class BookingRental extends Model
 {
     use HasFactory;
-    protected $fillable = ['nameSurname', 'email', 'cap', 'rental_id', 'dal', 'al','trasporto','vert', 'orizz', 'qta', 'telefono', 'passepartout', 'colorPass','fondo', 'montaggio', 'smontaggio','message'];
+    protected $fillable = ['name','surname', 'email', 'telefono', 'provincia', 'cap',  'dal', 'al','trasporto', 'message'];
 
 
-    public function rental () {
-        return $this->belongsTo(Rental::class);
-    }
-    public function OtherRentals () {
-        return $this->hasMany(OtherRental::class);
+    // public function rental () {
+    //     return $this->belongsTo(Rental::class);
+    // }
+    public function BookingRentalDetails () {
+        return $this->hasMany(BookingRentalDetail::class);
     }
 
     public function formatRentalCode () { 
@@ -30,6 +28,16 @@ class BookingRental extends Model
             return date('y') . '0' . $this->id;
         } else {
             return date('y') . '00' . $this->id;
+        }   
+    }
+
+    public function formatPreventivoN () { 
+        if($this->id > '99'){
+            return $this->id;
+        } else if ($this->id > '9'){
+            return '0' . $this->id;
+        } else {
+            return '00' . $this->id;
         }   
     }
     

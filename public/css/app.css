@@ -10849,6 +10849,12 @@ h1, .h1 {
   padding-bottom: 15px;
 }
 
+.lavorazione {
+  color: dimgrey;
+  border-color: grey;
+  border-style: dotted;
+}
+
 .navbar-md-brand {
   font-size: 0.99rem;
 }
@@ -10863,6 +10869,18 @@ h1, .h1 {
 
 .txt-accent {
   color: var(--accent) !important;
+}
+
+.txt-green {
+  color: rgba(0, 128, 0, 0.678) !important;
+}
+
+.bg-green {
+  background-color: rgba(177, 218, 177, 0.171) !important;
+}
+
+.bg-red {
+  background-color: rgba(218, 177, 177, 0.173) !important;
 }
 
 .navbar-dark {
@@ -10913,6 +10931,17 @@ h1, .h1 {
   z-index: 1;
 }
 
+.index-box {
+  height: 50px;
+  width: 50px;
+  color: var(--chiaro) !important;
+  border-radius: 50%;
+  border-color: var(--accent);
+  background-color: var(--accent);
+  text-align: center;
+  padding-left: 0.8rem !important;
+}
+
 .btn-ppp {
   border: 3px solid var(--accent);
   min-width: 170px;
@@ -10929,8 +10958,65 @@ h1, .h1 {
   background-color: transparent;
 }
 
+.btn-q {
+  width: 30px;
+  height: 30px;
+  box-shadow: 4px 4px 5px rgba(120, 120, 120, 0.462);
+  border-radius: 0 !important;
+  padding: 0.25rem !important;
+}
+
+.btn-r {
+  box-shadow: 4px 4px 5px rgba(120, 120, 120, 0.462);
+  border-radius: 0 !important;
+  padding: 0.25rem !important;
+}
+
 .ms-negative {
   margin-left: -0.5rem;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: block;
+}
+
+input[type=text] {
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
 }
 
 @media (min-width: 576px) {
